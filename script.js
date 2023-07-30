@@ -28,7 +28,7 @@ init();
 animate();
 
 (async () => {
-   const views = await (await fetch(' http://localhost:8000?key=vanilla_portfolio', { headers: { 'Content-Type': 'application/json' } })).json()
+   const views = await (await fetch('https://views-api.deno.dev?key=vanilla_portfolio', { headers: { 'Content-Type': 'application/json' } })).json()
    viewsElement.innerHTML = `${views}x`
 })()
 
