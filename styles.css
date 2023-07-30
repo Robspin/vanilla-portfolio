@@ -646,6 +646,9 @@ canvas {
 }
 
 @media only screen and (max-width: 900px) {
+   .times-visited {
+      display: none;
+   }
    .music-container-not-landing {
       display: none;
    }
