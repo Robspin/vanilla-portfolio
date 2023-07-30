@@ -18,6 +18,7 @@ const musicSvg = document.querySelectorAll('.music-path');
 const body = document.querySelector('body');
 const loadingDiv = document.querySelector('.loading-div');
 const loadingBar = document.querySelector('.loading-bar');
+const viewsElement = document.querySelector('#visited');
 
 let scene, camera, renderer, stars, starGeo, starMaterial;
 
@@ -25,6 +26,11 @@ let state = 'up';
 
 init();
 animate();
+
+(async () => {
+   const views = await (await fetch('https://views-api.deno.dev?key=vanilla_portfolio')).res.json()
+   viewsElement.innerHTML = `${views}x`
+})()
 
 function init() {
    const loadingManager = new THREE.LoadingManager(
